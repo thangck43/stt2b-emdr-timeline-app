@@ -1,6 +1,7 @@
 # Khởi động Dash server cho Render
 if __name__ == "__main__":
     import os
+    app = Dash(__name__)
     app.run_server(host="0.0.0.0", port=int(os.environ.get("PORT", 8050)), debug=False)
 import pandas as pd
 import plotly.express as px
@@ -1051,4 +1052,5 @@ app.clientside_callback(
 
 if __name__ == '__main__':
     print("Khởi chạy dashboard: http://127.0.0.1:8050")
+
     app.run(debug=False)
