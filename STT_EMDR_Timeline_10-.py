@@ -1046,5 +1046,10 @@ app.clientside_callback(
 
 
 if __name__ == '__main__':
-    print("Khởi chạy dashboard: http://127.0.0.1:8050")
-    app.run(debug=False)
+    # Lấy PORT từ môi trường (ENV) được cung cấp bởi Render
+    port = int(os.environ.get("PORT", 8050))
+    # Render yêu cầu lắng nghe trên 0.0.0.0 để có thể truy cập công khai
+    host = '0.0.0.0'
+    print("Khởi chạy dashboard: http://{host}:{port}")
+    app.run(host=host, port=port)
+  
